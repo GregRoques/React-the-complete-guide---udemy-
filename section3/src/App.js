@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import Cat from './Containers/Cat';
+import Cat from './Presentational/Cat';
 
 class App extends Component {
 
@@ -36,24 +36,39 @@ nameChangedHandler = (event)=> {
 }
 
   render() {
+
+    const style = {
+      backgroundColor: 'white',
+      font: 'sans-serif',
+      border: '1px solid blue',
+      padding: '8px',
+      marginTop: '10px',
+      borderRadius: '15px 15px',
+      cursor: 'pointer',
+      fontWeight: 'bold',
+      color:'red'
+    };
+
     return (
       <div className="App">
-        <button onClick={this.switchNameHandler}>Switch Name</button>
+        <button 
+          style ={style}
+          onClick={this.switchNameHandler}>Switch Name</button>
         <Cat
-        name={this.state.cats[0].name}
-        age={this.state.cats[0].age}/>
+          name={this.state.cats[0].name}
+          age={this.state.cats[0].age}/>
 
         <Cat
-        name={this.state.cats[1].name}
-        age={this.state.cats[1].age}
-        click={this.switchNameHandler.bind(this, 'Meow!!!!')}
-        changed={this.nameChangedHandler}
-        >I like scratching furniture and eating treats.</Cat>
+          name={this.state.cats[1].name}
+          age={this.state.cats[1].age}
+          click={this.switchNameHandler.bind(this, 'Meow!!!!')}
+          changed={this.nameChangedHandler}
+          >I like scratching furniture and eating treats.
+        </Cat>
 
          <Cat
-         name={this.state.cats[0].name}
-         age={this.state.cats[0].age}/>
-
+          name={this.state.cats[0].name}
+          age={this.state.cats[0].age}/>
       </div>
     );
   }

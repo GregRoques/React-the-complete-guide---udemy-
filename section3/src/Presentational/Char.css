@@ -1,0 +1,10 @@
+.CharCenter{
+    display:inline-block;
+    position: relative;
+    margin-top: 100px;
+    text-align: center;
+    letter-spacing: 15px;
+    color: blue;
+    font-weight: bolder;
+    
+}
